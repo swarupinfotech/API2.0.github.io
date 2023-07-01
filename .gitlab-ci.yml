@@ -1,0 +1,31 @@
+image: node:16
+
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master"
+    - if: $CI_COMMIT_BRANCH == "develop"
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+
+cache:
+  paths:
+    - node_modules/
+
+build:
+  script:
+    - yarn install
+    - yarn compile
+
+test:
+  script:
+    - yarn install
+    - yarn test
+
+coverage:
+  script:
+    - yarn install
+    - yarn coverage
+
+lint:
+  script:
+    - yarn install
+    - yarn lint

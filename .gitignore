@@ -1,0 +1,13 @@
+node_modules
+.env
+coverage
+coverage.json
+.idea
+.DS_Store
+seeder.ts
+
+#Hardhat files
+cache
+artifacts
+typechain-types
+yarn-error.log
